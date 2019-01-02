@@ -1,0 +1,24 @@
+{
+  "name": "woo-ai-product-writer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dev tooling for the AI Product Writer for WooCommerce plugin: tests on PHP-WASM, a WordPress Playground demo, a mock OpenAI server and the release zip.",
+  "type": "module",
+  "license": "GPL-2.0-or-later",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "setup:wp": "node scripts/setup-test-wp.mjs",
+    "test": "node scripts/test.mjs",
+    "php": "node scripts/php.mjs",
+    "demo": "node scripts/demo.mjs",
+    "mock-openai": "node mock-openai/server.mjs",
+    "zip": "node scripts/build-zip.mjs"
+  },
+  "devDependencies": {
+    "@php-wasm/node": "3.1.61",
+    "@php-wasm/universal": "3.1.61",
+    "@wp-playground/cli": "3.1.61"
+  }
+}

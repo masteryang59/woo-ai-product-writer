@@ -1,0 +1,8 @@
+node_modules/
+vendor/
+.cache/
+.wp-test/
+dist/
+.env
+.phpunit.result.cache
+*.filter_items.tmp
