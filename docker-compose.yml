@@ -1,0 +1,64 @@
+# WordPress + WooCommerce + this plugin (mounted from the working copy) + six demo
+# products + a mock OpenAI server. http://localhost:8080/wp-admin  (admin / password)
+services:
+  db:
+    image: mariadb:11.4.13
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: wordpress
+      MARIADB_ROOT_PASSWORD: root
+    volumes:
+      - db-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      retries: 20
+
+  wordpress:
+    image: wordpress:7.1.4-php8.3-apache
+    ports:
+      - "8080:80"
+    environment: &wp-env
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+      # Read by the plugin (environment beats the settings page).
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-http://mock-openai:3010/v1}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4.1-mini}
+    volumes: &wp-volumes
+      - wp-data:/var/www/html
+      - ./:/var/www/html/wp-content/plugins/woo-ai-product-writer:ro
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # One-off: installs WordPress and WooCommerce, activates the plugin, seeds products.
+  setup:
+    image: wordpress:cli-2.12.0-php8.3
+    user: "33:33"
+    environment: *wp-env
+    volumes: *wp-volumes
+    entrypoint: ["sh", "/var/www/html/wp-content/plugins/woo-ai-product-writer/docker/setup.sh"]
+    depends_on:
+      db:
+        condition: service_healthy
+      wordpress:
+        condition: service_started
+
+  mock-openai:
+    image: node:22-alpine
+    working_dir: /app
+    command: ["node", "mock-openai/server.mjs"]
+    environment:
+      MOCK_HOST: 0.0.0.0
+      MOCK_LATENCY_MS: ${MOCK_LATENCY_MS:-800}
+      MOCK_FAILURE_RATE: ${MOCK_FAILURE_RATE:-0}
+    volumes:
+      - ./mock-openai:/app/mock-openai:ro
+
+volumes:
+  db-data:
+  wp-data:
