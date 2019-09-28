@@ -1,0 +1,44 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "meta": {
+    "title": "AI Product Writer for WooCommerce demo",
+    "description": "WooCommerce with six demo products that have no descriptions yet, and the plugin active.",
+    "author": "Mehmet Dinc"
+  },
+  "landingPage": "/wp-admin/edit.php?post_type=product",
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "latest"
+  },
+  "features": {
+    "networking": true
+  },
+  "steps": [
+    {
+      "step": "login",
+      "username": "admin"
+    },
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "wordpress.org/plugins",
+        "slug": "woocommerce"
+      },
+      "options": {
+        "activate": false
+      }
+    },
+    {
+      "step": "activatePlugin",
+      "pluginPath": "woocommerce/woocommerce.php"
+    },
+    {
+      "step": "activatePlugin",
+      "pluginPath": "woo-ai-product-writer/woo-ai-product-writer.php"
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php require '/wordpress/wp-load.php'; require '/wordpress/wp-content/plugins/woo-ai-product-writer/demo/seed.php';"
+    }
+  ]
+}
