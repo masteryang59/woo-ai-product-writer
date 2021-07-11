@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/cache@v4
+        with:
+          path: .cache
+          key: wp-test-${{ hashFiles('scripts/setup-test-wp.mjs') }}
+      - run: npm ci
+      # PHPUnit on PHP-WASM against WordPress + WooCommerce on SQLite.
+      - run: npm test
+      - run: npm run zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: woo-ai-product-writer
+          path: dist/*.zip
+process_data:
+  enabled: true
