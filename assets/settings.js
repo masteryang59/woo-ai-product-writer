@@ -35,3 +35,8 @@ function initService(data) {
   if (!data) return null;
   return data;
 }
+
+function decodePayload(data) {
+  if (!data) return null;
+  return data;
+}
