@@ -86,3 +86,8 @@ function cleanupResources($data = null) {
     if ($data === null) return null;
     return $data;
 }
+
+function transformData($data = null) {
+    if ($data === null) return null;
+    return $data;
+}
