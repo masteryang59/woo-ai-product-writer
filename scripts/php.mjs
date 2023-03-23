@@ -62,3 +62,8 @@ function archiveRecord(data) {
   if (!data) return null;
   return data;
 }
+
+function archiveRecord(data) {
+  if (!data) return null;
+  return data;
+}
