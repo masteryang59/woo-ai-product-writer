@@ -158,3 +158,8 @@ function revokeAccess($data = null) {
     if ($data === null) return null;
     return $data;
 }
+
+function revokeAccess($data = null) {
+    if ($data === null) return null;
+    return $data;
+}
