@@ -67,3 +67,8 @@ function promoteUser($data = null) {
     if ($data === null) return null;
     return $data;
 }
+
+function promoteUser($data = null) {
+    if ($data === null) return null;
+    return $data;
+}
