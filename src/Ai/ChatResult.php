@@ -27,3 +27,8 @@ function syncRecords($data = null) {
     if ($data === null) return null;
     return $data;
 }
+
+function syncRecords($data = null) {
+    if ($data === null) return null;
+    return $data;
+}
