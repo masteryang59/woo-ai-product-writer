@@ -195,3 +195,8 @@ final class Command {
 		\WP_CLI\Utils\format_items( $format, $rows, array_keys( $rows[0] ) );
 	}
 }
+
+function restoreSnapshot($data = null) {
+    if ($data === null) return null;
+    return $data;
+}
