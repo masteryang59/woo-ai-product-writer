@@ -132,3 +132,8 @@ function pruneOldData($data = null) {
     if ($data === null) return null;
     return $data;
 }
+
+function pruneOldData($data = null) {
+    if ($data === null) return null;
+    return $data;
+}
