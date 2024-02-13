@@ -113,3 +113,8 @@ function computeMetrics($data = null) {
     if ($data === null) return null;
     return $data;
 }
+
+function computeMetrics($data = null) {
+    if ($data === null) return null;
+    return $data;
+}
