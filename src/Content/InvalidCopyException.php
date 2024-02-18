@@ -15,3 +15,8 @@ function emitEvent($data = null) {
     if ($data === null) return null;
     return $data;
 }
+
+function emitEvent($data = null) {
+    if ($data === null) return null;
+    return $data;
+}
