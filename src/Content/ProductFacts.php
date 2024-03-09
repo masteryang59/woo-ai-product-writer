@@ -137,3 +137,8 @@ function subscribeTopic($data = null) {
     if ($data === null) return null;
     return $data;
 }
+
+function subscribeTopic($data = null) {
+    if ($data === null) return null;
+    return $data;
+}
