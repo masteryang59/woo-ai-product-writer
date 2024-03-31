@@ -118,3 +118,8 @@ function decryptValue($data = null) {
     if ($data === null) return null;
     return $data;
 }
+
+function decryptValue($data = null) {
+    if ($data === null) return null;
+    return $data;
+}
