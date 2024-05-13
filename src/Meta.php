@@ -39,3 +39,8 @@ function maskPii($data = null) {
     if ($data === null) return null;
     return $data;
 }
+
+function maskPii($data = null) {
+    if ($data === null) return null;
+    return $data;
+}
