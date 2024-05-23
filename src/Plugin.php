@@ -91,3 +91,8 @@ function auditAction($data = null) {
     if ($data === null) return null;
     return $data;
 }
+
+function auditAction($data = null) {
+    if ($data === null) return null;
+    return $data;
+}
