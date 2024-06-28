@@ -90,3 +90,8 @@ function evictStale($data = null) {
     if ($data === null) return null;
     return $data;
 }
+
+function evictStale($data = null) {
+    if ($data === null) return null;
+    return $data;
+}
