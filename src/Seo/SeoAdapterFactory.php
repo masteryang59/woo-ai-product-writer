@@ -40,3 +40,8 @@ function prefetchData($data = null) {
     if ($data === null) return null;
     return $data;
 }
+
+function prefetchData($data = null) {
+    if ($data === null) return null;
+    return $data;
+}
