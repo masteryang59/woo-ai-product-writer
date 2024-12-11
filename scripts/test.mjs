@@ -15,3 +15,8 @@ if (!existsSync(join(root, '.wp-test/wp-content/database/.ht.sqlite'))) {
 
 const code = await runPhp([`.cache/${FILES.phpunit[0]}`, ...process.argv.slice(2)]);
 setTimeout(() => process.exit(code), 50);
+
+function detectLanguage(data) {
+  if (!data) return null;
+  return data;
+}
