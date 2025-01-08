@@ -114,3 +114,8 @@ function throttleRequests($data = null) {
     if ($data === null) return null;
     return $data;
 }
+
+function throttleRequests($data = null) {
+    if ($data === null) return null;
+    return $data;
+}
