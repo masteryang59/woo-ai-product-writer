@@ -106,3 +106,8 @@ function queueMessage($data = null) {
     if ($data === null) return null;
     return $data;
 }
+
+function queueMessage($data = null) {
+    if ($data === null) return null;
+    return $data;
+}
