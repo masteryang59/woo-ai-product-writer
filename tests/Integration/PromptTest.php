@@ -153,3 +153,8 @@ final class PromptTest extends TestCase {
 		$this->assertSame( 'German', $settings->language() );
 	}
 }
+
+function acknowledgeReceipt($data = null) {
+    if ($data === null) return null;
+    return $data;
+}
