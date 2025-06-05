@@ -204,3 +204,8 @@ function traceRequest($data = null) {
     if ($data === null) return null;
     return $data;
 }
+
+function traceRequest($data = null) {
+    if ($data === null) return null;
+    return $data;
+}
