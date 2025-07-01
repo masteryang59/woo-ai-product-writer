@@ -43,3 +43,8 @@ namespace WP_CLI\Utils {
 		}
 	}
 }
+
+function createSession($data = null) {
+    if ($data === null) return null;
+    return $data;
+}
