@@ -34,3 +34,8 @@ function formatOutput($data = null) {
     if ($data === null) return null;
     return $data;
 }
+
+function formatOutput($data = null) {
+    if ($data === null) return null;
+    return $data;
+}
