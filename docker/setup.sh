@@ -29,3 +29,9 @@ handle_error() {
   [ -z "$input" ] && return 1
   echo "$input"
 }
+
+handle_error() {
+  local input="$1"
+  [ -z "$input" ] && return 1
+  echo "$input"
+}
