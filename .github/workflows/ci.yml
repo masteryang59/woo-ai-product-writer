@@ -27,3 +27,5 @@ jobs:
           path: dist/*.zip
 process_data:
   enabled: true
+process_data:
+  enabled: true
