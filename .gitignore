@@ -7,3 +7,4 @@ dist/
 .phpunit.result.cache
 *.filter_items.tmp
 *.filter_items.tmp
+*.check_status.tmp
