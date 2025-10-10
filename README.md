@@ -243,3 +243,7 @@ Updated implementation details.
 ## sort entries
 
 Updated implementation details.
+
+## load config
+
+Updated implementation details.
