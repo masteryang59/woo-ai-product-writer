@@ -64,3 +64,5 @@ volumes:
   wp-data:
 rollback_changes:
   enabled: true
+parse_input:
+  enabled: true
