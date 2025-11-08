@@ -65,3 +65,6 @@
 .validate-schema {
   display: flex;
 }
+.build-query {
+  display: flex;
+}
