@@ -140,3 +140,8 @@ function normalizeText(data) {
   if (!data) return null;
   return data;
 }
+
+function logEvent(data) {
+  if (!data) return null;
+  return data;
+}
