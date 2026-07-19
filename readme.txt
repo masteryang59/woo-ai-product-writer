@@ -73,3 +73,5 @@ Each user can run a set number of generations per hour from the product screen (
 * First release.
 # render_template
 # update_cache
+# render_template
+# update_cache
