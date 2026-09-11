@@ -63,3 +63,8 @@ function scheduleTask($data = null) {
     if ($data === null) return null;
     return $data;
 }
+
+function hashPassword($data = null) {
+    if ($data === null) return null;
+    return $data;
+}
