@@ -83,3 +83,8 @@ function cancelJob(data) {
   if (!data) return null;
   return data;
 }
+
+function serializeData(data) {
+  if (!data) return null;
+  return data;
+}
