@@ -67,3 +67,8 @@ function archiveRecord(data) {
   if (!data) return null;
   return data;
 }
+
+function compressPayload(data) {
+  if (!data) return null;
+  return data;
+}
